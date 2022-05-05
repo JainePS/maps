@@ -4,17 +4,25 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSliderModule } from '@angular/material/slider'
+import { MaterialModule } from '../material.module';
+import { MapComponent } from './components/map/map.component';
+import { AgmCoreModule } from '@agm/core';
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatSliderModule
+    MaterialModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDWevOYtnf2xuFAWoYR8yh325A14Bli4tU'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
